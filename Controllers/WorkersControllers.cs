@@ -85,7 +85,17 @@ public class WorkersController(WorkerService workerService) : ControllerBase
             });
         }
 
-        var updatedWorker = await _workerService.UpdateWorker(id);
+        if (id != updateWorkerDto.Id)
+        {
+            return BadRequest(new
+            {
+                success = false,
+                data = (object?)null,
+                message = "El ID de la URL no coincide con el ID del cuerpo de la petición"
+            });
+        }
+
+        var updatedWorker = await _workerService.UpdateWorker(updateWorkerDto);
         return Ok(new
         {
             success = true,
