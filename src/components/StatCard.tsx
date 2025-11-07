@@ -2,14 +2,12 @@ interface StatCardProps {
   title: string;
   value: string | number;
   icon: React.ReactNode;
-  color: 'blue' | 'green' | 'purple' | 'orange';
+  color: 'blue' | 'orange';
 }
 
 const StatCard = ({ title, value, icon, color }: StatCardProps) => {
   const colorClasses = {
     blue: 'from-blue-500 to-blue-600',
-    green: 'from-green-500 to-green-600',
-    purple: 'from-purple-500 to-purple-600',
     orange: 'from-orange-500 to-orange-600'
   };
 
