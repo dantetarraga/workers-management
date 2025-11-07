@@ -50,7 +50,6 @@ ScaffoldingReadMe.txt
 
 ## Environment files
 .env
-.env.*
 
 ## IDEs
 .idea/
