@@ -14,10 +14,64 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+## Visual Studio / .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vsp
+*.vspscc
+*.vssscc
 .vs/
+
+## Build results
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+## User-specific files
+*.userprefs
+*.dbmdl
+*.bak
+*.backup
+*.tmp
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Entity Framework
+
+*.mdf
+*.ldf
+
+## Environment files
+.env
+.env.*
+
+## IDEs
+.idea/
 .vscode/
 
+## NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+project.lock.json
+project.fragment.lock.json
 
-*.env
+## Logs
+*.log
+Logs/
+log/
+logs/
 
+## Others
+node_modules/
+wwwroot/dist/
+wwwroot/lib/
 
