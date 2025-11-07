@@ -3,14 +3,13 @@ import { useState } from 'react';
 interface AvatarProps {
   src?: string;
   name: string;
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: 'sm' | 'md' | 'lg';
   className?: string;
 }
 
 const Avatar = ({ src, name, size = 'md', className = '' }: AvatarProps) => {
   const [imageError, setImageError] = useState(false);
 
-  // Obtener iniciales del nombre
   const getInitials = (fullName: string): string => {
     const names = fullName.trim().split(' ');
     if (names.length >= 2) {
@@ -19,7 +18,6 @@ const Avatar = ({ src, name, size = 'md', className = '' }: AvatarProps) => {
     return fullName.substring(0, 2).toUpperCase();
   };
 
-  // Generar color basado en el nombre
   const getColorFromName = (fullName: string): string => {
     const colors = [
       'bg-blue-500',
@@ -38,12 +36,10 @@ const Avatar = ({ src, name, size = 'md', className = '' }: AvatarProps) => {
     return colors[charCodeSum % colors.length];
   };
 
-  // Tamaños
   const sizeClasses = {
     sm: 'h-8 w-8 text-xs',
     md: 'h-10 w-10 text-sm',
     lg: 'h-12 w-12 text-base',
-    xl: 'h-16 w-16 text-lg',
   };
 
   const shouldShowImage = src && !imageError;
@@ -64,7 +60,7 @@ const Avatar = ({ src, name, size = 'md', className = '' }: AvatarProps) => {
         <img
           src={src}
           alt={name}
-          className="h-full w-full rounded-full object-cover"
+          className="object-cover w-full h-full rounded-full"
           onError={() => setImageError(true)}
         />
       ) : (
